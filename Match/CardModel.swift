@@ -2,8 +2,8 @@
 //  CardModel.swift
 //  Match
 //
-//  Created by Mohamed Canaria on 11/19/19.
-//  Copyright © 2019 Mohamed Canaria. All rights reserved.
+//  Created by Mohamed Mostafa Fawzi on 11/24/19.
+//  Copyright © 2019 MohamedMostafaFawzi. All rights reserved.
 //
 
 import Foundation
@@ -19,7 +19,7 @@ class CardModel {
         var generatedCardsArray = [Card]()
         
         // Randomly generate pairs of cards
-        while generatedNumbersArray.count < 8 {
+        while generatedNumbersArray.count < 10 {
             
             // Get a random number
             let randomNumber = arc4random_uniform(13) + 1

@@ -2,8 +2,8 @@
 //  SoundManager.swift
 //  Match
 //
-//  Created by Mohamed Canaria on 11/24/19.
-//  Copyright © 2019 Mohamed Canaria. All rights reserved.
+//  Created by Mohamed Mostafa Fawzi on 11/24/19.
+//  Copyright © 2019 MohamedMostafaFawzi. All rights reserved.
 //
 
 import Foundation

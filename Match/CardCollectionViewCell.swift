@@ -2,8 +2,8 @@
 //  CardCollectionViewCell.swift
 //  Match
 //
-//  Created by Mohamed Canaria on 11/19/19.
-//  Copyright © 2019 Mohamed Canaria. All rights reserved.
+//  Created by Mohamed Mostafa Fawzi on 11/24/19.
+//  Copyright © 2019 MohamedMostafaFawzi. All rights reserved.
 //
 
 import UIKit
@@ -26,14 +26,14 @@ class CardCollectionViewCell: UICollectionViewCell {
         if card.isMatched == true {
             
             
-        // If the cards has been matched, then make the image views invisiable
+        // If the cards has been matched, then make the image views invisible
             backImageView.alpha = 0
             frontImageView.alpha = 0
             
             return
         }
         else {
-            // If the cards hasn't been matched, then make the image views visiable
+            // If the cards hasn't been matched, then make the image views visible
             backImageView.alpha = 1
             frontImageView.alpha = 1
         }
@@ -73,7 +73,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     func remove()  {
-        // Remove both imageviews from being invisable
+        // Remove both imageviews from being invisible
         backImageView.alpha = 0
 
         // Animate it
