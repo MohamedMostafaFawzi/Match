@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -20,7 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var firstFlippedCardIndex:IndexPath?
     
     var timer:Timer?
-    var milliseconds:Float = 60 * 1000 // 10 seconeds
+    var milliseconds:Float = 60 * 1000 // 10 seconds
     
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         SoundManager.playSound(.shuffle)
         
     }
-
+    
     //MARK: - Timer Methods
     
     @objc func timerElapsed()  {
@@ -109,20 +109,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if card.isFlipped == false && card.isMatched == false {
             
-          // Flip the card
-          cell.flip()
+            // Flip the card
+            cell.flip()
             
-          // Play the flip sound
+            // Play the flip sound
             SoundManager.playSound(.flip )
             
-          // Set the status of the card
-          card.isFlipped = true
-          // Determine if it's the first card or the second card that's flipped over
+            // Set the status of the card
+            card.isFlipped = true
+            // Determine if it's the first card or the second card that's flipped over
             if firstFlippedCardIndex == nil {
                 // This is the first card being flipped
                 firstFlippedCardIndex = indexPath
             }
-            
+                
             else {
                 // This is the second card being flipped
                 
@@ -149,12 +149,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // Compare the two cards
         if  cardOne.imageName == cardTwo.imageName {
-
+            
             // It's a match
             
             // Play sound
             SoundManager.playSound(.match)
-             
+            
             // Set the statuses of the cards
             cardOne.isMatched = true
             cardTwo.isMatched = true
@@ -167,14 +167,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             checkGameEnded()
             
         }
-        
+            
         else {
             
             // It's not a match
             
             //Play sound
-            SoundManager.playSound(.nomatch)
-                 
+            SoundManager.playSound(.noMatch)
+            
             // Set the statuses of the cards
             cardOne.isFlipped = false
             cardTwo.isFlipped = false
@@ -222,7 +222,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             message = "You've won."
             
         }
-        
+            
         else {
             // If there are unmatched cards, check if there's any time left
             if milliseconds > 0 {
@@ -231,24 +231,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             title = "Game Over!"
             message = "Sorry, you've lost."
- 
+            
             
         }
         
         
         // Show won/lost messaging
-       showAlert(title, message )
+        showAlert(title, message )
     }
     
     func showAlert(_ title:String, _ message:String) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-               
-               let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-               
-               alert.addAction(alertAction)
-               
-               present(alert, animated: true, completion: nil)
+        
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(alertAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     

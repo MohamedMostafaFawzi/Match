@@ -11,18 +11,18 @@ import AVFoundation
 
 class SoundManager {
     
-   static var audioPlayer:AVAudioPlayer?
+    static var audioPlayer:AVAudioPlayer?
     
     enum SoundEffect {
         
         case flip
         case shuffle
         case match
-        case nomatch
+        case noMatch
         
     }
     
-   static func playSound(_ effect:SoundEffect) {
+    static func playSound(_ effect:SoundEffect) {
         
         // Determine which sound effect we want to play
         // And set the appropriate file name
@@ -39,9 +39,9 @@ class SoundManager {
         case .match:
             soundFileName = "dingcorrect"
             
-        case .nomatch:
+        case .noMatch:
             soundFileName = "dingwrong"
-
+            
         }
         
         let bundlePath = Bundle.main.path(forResource: soundFileName, ofType: "wav")
@@ -65,9 +65,9 @@ class SoundManager {
         catch  {
             // Couldn't create the audio player object, log the error
             print("Couldn't create the audio player object for sound file \(soundFileName)")
-
+            
         }
-       
+        
         
         
         

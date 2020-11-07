@@ -44,7 +44,7 @@ class CardModel {
                 generatedCardsArray.append(cardTwo)
             }
         }
-    //Randomize the array
+        //Randomize the array
         for i in 0...generatedCardsArray.count-1 {
             
             // Find a random index to swap with
@@ -55,7 +55,7 @@ class CardModel {
             generatedCardsArray [i] = generatedCardsArray [randomNumber]
             generatedCardsArray [randomNumber] = temporaryStorage
         }
-    // Return the array
+        // Return the array
         return generatedCardsArray
         
     }
